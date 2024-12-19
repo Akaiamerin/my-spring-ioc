@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+    <bean id="user" class="org.springframework.entity.User">
+        <property name="username" value="admin"></property>
+        <property name="password" value="111111"></property>
+    </bean>
+
+    <bean id="userDAO" class="org.springframework.dao.impl.UserDAOImpl">
+        <property name="user" ref="user"></property>
+    </bean>
+
+    <bean id="userService" class="org.springframework.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"></property>
+    </bean>
+</beans>
